@@ -10,5 +10,6 @@ steps:
 - powershell: |
     pwd
     ls
+    Get-Command -Module PSScriptAnalyzer
   displayName: 'Get current directory'
 
