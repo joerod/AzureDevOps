@@ -12,5 +12,6 @@ steps:
     ls
     Get-Module -ListAvailable | select name
     Install-Module PSScriptAnalyzer -Force
+    Get-Module PSScriptAnalyzer
   displayName: 'Get current directory'
 
