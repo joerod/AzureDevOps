@@ -10,7 +10,7 @@ steps:
 - powershell: |
     pwd
     ls
-    Get-Module -ListAvailable | select name
+    Find-Module PSScriptAnalyzer
     Install-Module PSScriptAnalyzer -Force | select -expand name
     Get-Module PSScriptAnalyzer -verbose
     write-output "hello"
