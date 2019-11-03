@@ -9,8 +9,9 @@ steps:
   path: '$(currentDirectory)'
 - powershell: |
     pwd
-    Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+    Install-PackageProvider -Name NuGet -Force -Scope CurrentUser | out-null
     Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
+    $Env:AGENT_BUILDDIRECTORY
     Invoke-ScriptAnalyzer -Path $Env:AGENT_BUILDDIRECTORY
 
   displayName: 'Import Module'
