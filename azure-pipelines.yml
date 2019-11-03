@@ -6,10 +6,11 @@ pool:
 
 steps:
 - checkout: self
-  path: '$(Agent.BuildDirectory)'
+  path: '$(currentDirectory)'
 - powershell: |
     pwd
     Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
     Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
-    Invoke-ScriptAnalyzer -Path $(Agent.BuildDirectory)
+    Invoke-ScriptAnalyzer -Path $Env:AGENT_BUILDDIRECTORY
+
   displayName: 'Import Module'
