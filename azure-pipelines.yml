@@ -7,12 +7,8 @@ pool:
 steps:
 - checkout: self
   path: '$(currentDirectory)'
-- powershell: pwd
-  displayName: 'Run a one-line script'
-
-
-
 - powershell: |
-    Write-Output Add other tasks to build, test, and deploy your project.
-    Write-Output See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    pwd
+    ls
+  displayName: 'Get current directory'
+
