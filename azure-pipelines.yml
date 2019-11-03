@@ -9,8 +9,7 @@ steps:
   path: '$(currentDirectory)'
 - powershell: |
     pwd
-    Find-Module PSScriptAnalyzer | Install-Module -Confirm:$false
+    Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+    Install-Module -Name PSScriptAnalyzer -Force -Verbose -Scope CurrentUser
     Get-Module PSScriptAnalyzer
-    write-output "hello"
-  displayName: 'Get current directory'
-
+  displayName: 'Import Module'
