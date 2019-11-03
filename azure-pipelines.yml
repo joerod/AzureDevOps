@@ -10,6 +10,6 @@ steps:
 - powershell: |
     pwd
     Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
-    Install-Module -Name PSScriptAnalyzer -Force -Verbose -Scope CurrentUser
-    Get-Module PSScriptAnalyzer
+    Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
+    Invoke-ScriptAnalyzer -Path $(currentDirectory)
   displayName: 'Import Module'
