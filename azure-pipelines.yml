@@ -6,6 +6,7 @@ pool:
 
 steps:
 - checkout: self
+  path: '$(currentDirectory)'
 - powershell: Write-Output Hello, world!
   displayName: 'Run a one-line script'
 
