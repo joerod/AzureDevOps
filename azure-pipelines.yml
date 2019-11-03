@@ -9,10 +9,8 @@ steps:
   path: '$(currentDirectory)'
 - powershell: |
     pwd
-    ls
-    Find-Module PSScriptAnalyzer
-    Install-Module PSScriptAnalyzer -Force | select -expand name
-    Get-Module PSScriptAnalyzer -verbose
+    Find-Module PSScriptAnalyzer | Install-Module
+    Get-Module PSScriptAnalyzer
     write-output "hello"
   displayName: 'Get current directory'
 
