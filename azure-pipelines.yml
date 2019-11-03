@@ -7,13 +7,10 @@ pool:
 steps:
 - checkout: self
   path: '$(currentDirectory)'
-- powershell: Write-Output Hello, world!
+- powershell: pwd
   displayName: 'Run a one-line script'
 
-- task: PowerShell Script Analyzer@1
-  inputs:
-    PsFolder: '$(currentDirectory)'
-    FailOnError: true
+
 
 - powershell: |
     Write-Output Add other tasks to build, test, and deploy your project.
